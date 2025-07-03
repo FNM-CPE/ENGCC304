@@ -47,7 +47,7 @@ Enter you age: 18
 
 ```
 
-```bash
+```
 <img width="160" alt="Screenshot 2025-07-03 183206" src="https://github.com/user-attachments/assets/c93f33eb-67ef-42a2-bb5f-3ae1ba310c00" />
 ```
 
