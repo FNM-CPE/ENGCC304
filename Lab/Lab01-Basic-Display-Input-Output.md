@@ -53,8 +53,9 @@ Enter you age: 18
 Hello Natthawat
 Age = 18
 
-<img width="100" alt="Screenshot 2025-07-03 183220" src="https://github.com/user-attachments/assets/036a9a21-5ff3-4285-ad8e-dd0d41c788d1" />
 ```
+<img width="100" alt="Screenshot 2025-07-03 183220" src="https://github.com/user-attachments/assets/036a9a21-5ff3-4285-ad8e-dd0d41c788d1" />
+
 
 ## มาตรฐานการตรวจตามหลักการเรียนรู้ของบลูม
 | ลำดับการเรียนรู้ | เกณฑ์การวัด | คะแนน |
