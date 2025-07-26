@@ -4,6 +4,34 @@
 ## FIX CODE
 ```c++
 #include <stdio.h>
+
+int main() {
+    char number[11];
+    int hrs;
+    int hr;
+    float sum;
+
+    printf("Input the Employees ID(Max. 10 chars): ");
+    scanf("%10s", &number);
+
+    printf("Input the working hrs:\n");
+    scanf("%d", &hrs);
+
+    printf("Salary amount/hr:\n");
+    scanf("%d", &hr);
+
+    printf("Expected Output:\n");
+    printf("Input the working hrs:");
+    for (int i = 0; number[i] != '\0'; i++) {
+        printf("%c", number[i]);
+    }
+    sum = hrs*hr;
+
+    printf("\nSalary = U$ %.2f",sum);
+
+    return 0;
+}
+
 ```
 
 ## TEST CASE 1
