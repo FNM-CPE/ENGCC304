@@ -20,7 +20,69 @@ srand( time( NULL ) ) ;
 
 ## FIX CODE
 ```c++
+#include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int target, random;
+    int score;
+    int cmd;
+
+    srand(time(NULL));   /* ให้ rand() สุ่มไม่ซ้ำ */
+
+    while (1) {
+        /* --- ถามผู้ใช้ก่อนเริ่มเกม --- */
+        printf("\nคุณต้องการเล่นเกมหรือไม่ (พิมพ์ 1=เล่น -1=ไม่เล่น : )\n");
+        if (scanf("%d", &cmd) != 1) {
+            printf("กรุณากรอก 1 หรือ -1 เท่านั้น\n");
+            while (getchar() != '\n');  /* ล้างบัฟเฟอร์ */
+            continue;
+        }
+        if (cmd == -1) {
+            printf("ขอบคุณที่ใช้โปรแกรม!\n");
+            return 0;
+        } else if (cmd != 1) {
+            printf("กรุณากรอก 1 หรือ -1 เท่านั้น\n");
+            continue;
+        }
+
+        /* --- เริ่มเกม --- */
+        target = rand() % 100 + 1;
+        score = 100;
+        printf("\nคุณมีคะแนน 100 คะแนน\n");
+        printf("\nโปรแกรมสุ่มตัวเลข 1-100 แล้ว! ลองทายดู\n");
+
+        while (1) {
+            printf("กรอกตัวเลขที่คุณทาย : ");
+            if (scanf("%d", &random) != 1) {
+                printf("กรุณากรอกเป็นตัวเลขเท่านั้น\n");
+                while (getchar() != '\n'); /* ล้างบัฟเฟอร์ */
+                continue;
+            }
+
+            if (random == target) {
+                printf("ยินดีด้วย! คุณทายถูก ตัวเลขคือ %d\n", target);
+                printf("คะแนนของคุณคือ %d\n", score);
+                break;
+            } else {
+                score -= 10;
+                if (score <= 0) {
+                    printf("คะแนนหมดแล้ว! เกมจบ\n");
+                    printf("เฉลยคือ %d\n", target);
+                    break;
+                }
+
+                if (random < target)
+                    printf("ตัวเลขที่ถูก มากกว่า %d (คะแนน = %d)\n", random, score);
+                else
+                    printf("ตัวเลขที่ถูก น้อยกว่า %d (คะแนน = %d)\n", random, score);
+
+            }
+        }
+    }
+}
+
 ```
 
 ## TEST CASE
