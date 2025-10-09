@@ -3,7 +3,46 @@
 
 ## FIX CODE
 ```c++
--
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter N : ");
+    scanf("%d", &n);
+
+    int arr[n];
+    //printf("Enter value[%d] ", n);
+    for (int i = 0; i < n; i++) {
+        printf("Enter value[%d] : ", i);
+        scanf("%d", &arr[i]);
+    }
+
+    printf("ผลลัพธ์: ");
+    for (int i = 0; i < n; i++) {
+        int x = arr[i];
+        int prime = 1; // สมมติว่าเป็นจำนวนเฉพาะ
+
+        if (x <= 1) {
+            prime = 0; // 0 และ 1 ไม่ใช่จำนวนเฉพาะ
+        } else {
+            for (int j = 2; j < x; j++) {
+                if (x % j == 0) {
+                    prime = 0;
+                    break;
+                }
+            }
+        }
+
+        if (prime)
+            printf("%d ", x);
+        else
+            printf("# ");
+    }
+
+    printf("\n");
+    return 0;
+}
+
 ```
 
 ## TEST CASE
