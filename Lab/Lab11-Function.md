@@ -6,7 +6,52 @@
 
 ## FIX CODE
 ```c++
--
+#include <stdio.h>
+#include <math.h>
+
+// ฟังก์ชันตรวจสอบว่าเป็นเลขอาร์มสตรองหรือไม่
+int isArmstrong(int num) {
+    int originalNum, remainder, n = 0;
+    double result = 0.0;
+
+    originalNum = num;
+
+    // นับจำนวนหลัก
+    while (originalNum != 0) {
+        originalNum /= 10;
+        ++n;
+    }
+
+    originalNum = num;
+
+    // คำนวณผลรวมของเลขยกกำลังจำนวนหลัก
+    while (originalNum != 0) {
+        remainder = originalNum % 10;
+        result += pow(remainder, n);
+        originalNum /= 10;
+    }
+
+    // ตรวจสอบว่าเท่ากับเลขเดิมหรือไม่
+    if ((int)result == num)
+        return 1; // เป็นอาร์มสตรอง
+    else
+        return 0; // ไม่เป็น
+}
+
+int main() {
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (isArmstrong(number))
+        printf("Pass\n");
+    else
+        printf("Not Pass\n");
+
+    return 0;
+}
+
 ```
 
 ## TEST CASE
