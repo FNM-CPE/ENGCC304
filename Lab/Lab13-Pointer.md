@@ -9,7 +9,36 @@
 
 ## FIX CODE
 ```c++
--
+#include <stdio.h>
+
+// ฟังก์ชันสำหรับสลับค่าตัวเลข โดยใช้ Pointer และไม่ใช้ตัวแปรพักค่า
+void swapNumbers(int *a, int *b) {
+    // ใช้การบวกและลบในการสลับค่าโดยไม่ใช้ตัวแปรชั่วคราว
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
+}
+
+int main() {
+    int num1 = 10, num2 = 20;
+    int *ptr1, *ptr2;
+
+    // เก็บตำแหน่งหน่วยความจำของ num1 และ num2
+    ptr1 = &num1;
+    ptr2 = &num2;
+
+    printf("Before swapping:\n");
+    printf("num1 = %d, num2 = %d\n", num1, num2);
+
+    // เรียกใช้ฟังก์ชัน swapNumbers เพื่อสลับค่า
+    swapNumbers(ptr1, ptr2);
+
+    printf("\nAfter swapping:\n");
+    printf("num1 = %d, num2 = %d\n", num1, num2);
+
+    return 0;
+}
+
 ```
 
 ## TEST CASE
